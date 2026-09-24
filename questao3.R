@@ -36,3 +36,30 @@ boxplot(total_user ~ estacao, data = data_group,
         xlab = "Estaçãoo", ylab = "Total de usuários por dia",
         col = c("lightblue", "lightgreen", "khaki", "salmon"))
 abline(h = Q1, lty = 2, col = "red")
+
+# Questão 3.2
+
+# Transforma a variavel numerica 'weathersit' num fator com rotulos compreensiveis
+data_group$clima <- factor(data_group$weathersit, 
+            levels = c(1, 2, 3), 
+            labels = c("Ceu Limpo", "Nublado", "Chuva Fraca"))
+
+# Calcula Média de total_user por clima
+print("Média de usuários por clima:")
+aggregate(total_user ~ clima, data = data_group, FUN = mean)
+
+# Calcula Desvio Padrão de total_user por clima
+print("Desvio padrão de usuários por clima:")
+aggregate(total_user ~ clima, data = data_group, FUN = sd)
+
+# Determina a proporção de dias 'low_usage' por clima
+print("Proporção de dias de baixa utilização por clima:")
+aggregate(low_usage ~ clima, data = data_group, FUN = mean)
+
+# 5. Gráfico para comparar as condições
+boxplot(total_user ~ clima, data = data_group,
+        main = "Total de usuários por Condição Meteorológica",
+        xlab = "Condição do Tempo", 
+        ylab = "Total de usuários por dia",
+        col = c("skyblue", "lightgray", "steelblue"))
+abline(h = Q1, lty = 2, col = "red")
