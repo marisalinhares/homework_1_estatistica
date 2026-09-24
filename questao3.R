@@ -56,7 +56,7 @@ aggregate(total_user ~ clima, data = data_group, FUN = sd)
 print("Proporção de dias de baixa utilização por clima:")
 aggregate(low_usage ~ clima, data = data_group, FUN = mean)
 
-# 5. Gráfico para comparar as condições
+# Gráfico para comparar as condições
 boxplot(total_user ~ clima, data = data_group,
         main = "Total de usuários por Condição Meteorológica",
         xlab = "Condição do Tempo", 
