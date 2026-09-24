@@ -21,18 +21,18 @@ data_group_10 <- data_group[1:10, ]
 print(aggregate(total_user ~ estacao, data = data_group_10, FUN = mean))
 print(aggregate(total_user ~ estacao, data = data_group_10, FUN = median))
 print(aggregate(total_user ~ estacao, data = data_group_10, FUN = sd))
-print(aggregate(low_usage  ~ estacao, data = data_group_10, FUN = mean))
+print(aggregate(low_usage ~ estacao, data = data_group_10, FUN = mean))
 
 #300 ob
 print(aggregate(total_user ~ estacao, data = data_group, FUN = mean))
 print(aggregate(total_user ~ estacao, data = data_group, FUN = median))
 print(aggregate(total_user ~ estacao, data = data_group, FUN = sd))
-print(aggregate(low_usage  ~ estacao, data = data_group, FUN = mean))
+print(aggregate(low_usage ~ estacao, data = data_group, FUN = mean))
 print(table(data_group$estacao))
 
 #boxplot
 boxplot(total_user ~ estacao, data = data_group,
-        main = "Total de usuarios por estacao do ano",
-        xlab = "Estacao", ylab = "Total de usuarios por dia",
+        main = "Total de usuários por estação do ano",
+        xlab = "Estaçãoo", ylab = "Total de usuários por dia",
         col = c("lightblue", "lightgreen", "khaki", "salmon"))
 abline(h = Q1, lty = 2, col = "red")
