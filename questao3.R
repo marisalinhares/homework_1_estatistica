@@ -13,7 +13,8 @@ print(nrow(data_group))
 print(Q1)
 print(sum(data_group$low_usage))
 
-#q3.1
+# Questão 3.1
+
 data_group$estacao <- factor(data_group$season, levels = c(1, 2, 3, 4),labels = c("Inverno", "Primavera", "Verao", "Outono"))
 data_group_10 <- data_group[1:10, ]
 
@@ -63,3 +64,21 @@ boxplot(total_user ~ clima, data = data_group,
         ylab = "Total de usuários por dia",
         col = c("skyblue", "lightgray", "steelblue"))
 abline(h = Q1, lty = 2, col = "red")
+
+# Questão 3.3
+
+# Calcula o coeficiente de correlação (Pearson)
+print("Coeficiente de correlação entre Temperatura e Total de Usuários:")
+correlacao <- cor(data_group$temp, data_group$total_user)
+print(correlacao)
+
+# Constrói o gráfico de dispersão (Scatter plot)
+plot(data_group$temp, data_group$total_user,
+     main = "Relação entre Temperatura e Utilização do Sistema",
+     xlab = "Temperatura Normalizada",
+     ylab = "Total de usuários por dia",
+     col = "darkorange",
+     pch = 16) # pch = 16 deixa os pontos preenchidos (bolinhas)
+
+# linha de tendência para visualizar melhor a relação
+abline(lm(total_user ~ temp, data = data_group), col = "blue", lwd = 2)
