@@ -129,7 +129,15 @@ abline(h = Q1, lty = 2, col = "red")
 
 # Questão 3.3
 
-# Calcula o coeficiente de correlação (Pearson)
+# Seleciona as 10 primeiras observacoes
+data_group_10 <- data_group[1:10, ]
+
+# Calcula o coeficiente de correlação (Pearson) - 10 primeiras observações
+print("Coeficiente de correlação entre Temperatura e Total de Usuários (10 primeiras observações):")
+correlacao_10 <- cor(data_group_10$temp, data_group_10$total_user)
+print(correlacao_10)
+
+# Calcula o coeficiente de correlação (Pearson) - 300 observações
 print("Coeficiente de correlação entre Temperatura e Total de Usuários:")
 correlacao <- cor(data_group$temp, data_group$total_user)
 print(correlacao)
