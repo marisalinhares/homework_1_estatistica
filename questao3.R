@@ -48,7 +48,7 @@ abline(h = Q1, lty = 2, col = "red")
 > # Seleciona as 10 primeiras observacoes
 > data_group_10 <- data_group[1:10, ]
 > 
-> # --- 10 primeiras observacoes ---
+> # 10 primeiras observacoes
 > 
 > # Calcula Média de total_user por clima (10 primeiras)
 > print("Média de usuários por clima (10 primeiras observações):")
@@ -82,7 +82,7 @@ abline(h = Q1, lty = 2, col = "red")
   Ceu Limpo     Nublado Chuva Fraca 
           7           3           0 
 > 
-> # --- 300 observacoes ---
+> # 300 observacoes 
 > 
 > # Calcula Média de total_user por clima
 > print("Média de usuários por clima:")
