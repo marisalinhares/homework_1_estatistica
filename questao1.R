@@ -7,7 +7,7 @@ r <- 1 + (M%%100)
 cat("Valor de r:", r, "\n")
 
 data_group <- dados_completos[r:(r+299),]
-dim(data_goup)
+dim(data_group)
 
 primeira_linha <- data_group$dteday[1]
 ultima_linha <- data_group$dteday[300]
